@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using Model;
+using DataAccess;
 
 namespace DataLayerForFluent
 {
@@ -11,15 +12,8 @@ namespace DataLayerForFluent
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Destination>()
-                .Property(d => d.Name).IsRequired();
-            modelBuilder.Entity<Destination>()
-                .Property(d => d.Description).HasMaxLength(500);
-            modelBuilder.Entity<Destination>()
-                .Property(d => d.Photo).HasColumnType("image");
-
-            modelBuilder.Entity<Lodging>()
-                .Property(l => l.Name).IsRequired().HasMaxLength(200);
+            modelBuilder.Configurations.Add(new DestinationConfiguration());
+            modelBuilder.Configurations.Add(new LodgingConfiguration());
         }
     }
 

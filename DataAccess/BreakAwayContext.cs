@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using Model;
 
-namespace DataLayerForAnnotations
+namespace DataLayerForFluent
 {
     public class BreakAwayContext : DbContext
     {

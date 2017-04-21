@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using Model;
 
-namespace DataAccess
+namespace DataLayerForAnnotations
 {
     public class BreakAwayContext : DbContext
     {
